@@ -5,12 +5,12 @@ import MNIST
 const SEED = 42
 
 # Playing around with these...
-const INITIAL_SPREAD = 3
+const INITIAL_SPREAD = 1
 const UPDATE_AMOUNT = .6
 
 srand(SEED)
 
-network = INITIAL_SPREAD*(rand(Float32, (MNIST.NROWS, MNIST.NCOLS, 10)) .- .5)
+network = INITIAL_SPREAD*(rand(Float32, (MNIST.NROWS, MNIST.NCOLS, 10)) .- (INITIAL_SPREAD/2))
 
 function guess(image)
     scores = zeros(10)
